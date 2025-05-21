@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LongeCheck</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Pantalla 1: Inicio de sesión -->
+  <section id="login-screen" class="screen">
+    <h1>LongeCheck</h1>
+    <p>Tu guía personalizada para una vida más larga y saludable.</p>
+    <button class="btn google">Iniciar sesión con Google</button>
+    <p>¿No tenés cuenta?</p>
+    <button class="btn">Crear cuenta</button>
+    <button class="btn next" onclick="goToForm()">Continuar</button>
+  </section>
+
+  <!-- Pantalla 2: Formulario -->
+  <section id="form-screen" class="screen hidden">
+    <h2>Formulario de salud</h2>
+    <form id="health-form">
+      <label>¿Cuál es tu edad?<input type="number" required /></label>
+      <label>¿Fumás actualmente?<select><option>No</option><option>Sí</option></select></label>
+      <label>¿Cuántas horas dormís por noche?<input type="number" required /></label>
+      <label>¿Realizás actividad física semanal?<select><option>Sí</option><option>No</option></select></label>
+      <label>¿Tenés antecedentes familiares de enfermedades crónicas?<input type="text" /></label>
+      <!-- Agregá más preguntas si querés -->
+      <button class="btn next" type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Pantalla 3: Gracias -->
+  <section id="thanks-screen" class="screen hidden">
+    <h2>¡Gracias por unirte a LongeCheck!</h2>
+    <p>Pronto vas a recibir recomendaciones personalizadas.</p>
+    <button class="btn">Volver al inicio</button>
+  </section>
+
+  <script src="script.js"></script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBd38Jxe86nzcSKV7MxMBS54YNnFJAeCMc",
+    authDomain: "longecheck.firebaseapp.com",
+    projectId: "longecheck",
+    storageBucket: "longecheck.firebasestorage.app",
+    messagingSenderId: "273755290247",
+    appId: "1:273755290247:web:bfa7f1dfed1040faad9622",
+    measurementId: "G-624GC285GY"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+</body>
+</html>
